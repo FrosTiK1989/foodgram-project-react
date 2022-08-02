@@ -130,5 +130,7 @@ dmypy.json
 
 # .idea
 .idea
-./backend/foodgram_project/static/
-./.vscode/
+
+#Other folder
+backend/foodgram_project/static/
+.vscode/
