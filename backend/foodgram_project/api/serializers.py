@@ -60,18 +60,7 @@ class RecipeGetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Recipe
-        fields = (
-            "id",
-            "tags",
-            "author",
-            "ingredients",
-            "is_favorited",
-            "is_in_shopping_cart",
-            "name",
-            "image",
-            "text",
-            "cooking_time",
-        )
+        fields = "__all__"
 
     def get_ingredients(self, recipe):
         return AmountIngredientForRecipeGetSerializer(
@@ -108,16 +97,7 @@ class RecipePostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Recipe
-        fields = (
-            "id",
-            "author",
-            "ingredients",
-            "tags",
-            "image",
-            "name",
-            "text",
-            "cooking_time",
-        )
+        fields = "__all__"
 
     @staticmethod
     def create_ingredients_tags(recipe, ingredients, tags):

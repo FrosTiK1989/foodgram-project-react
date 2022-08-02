@@ -3,6 +3,8 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+# Global constant
+PAGE_SIZE = 6
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,8 +22,8 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    "users",
-    "recipe",
+    "users.apps.UsersConfig",
+    "recipe.apps.RecipeConfig",
     "api",
     "django.contrib.admin",
     "django.contrib.auth",

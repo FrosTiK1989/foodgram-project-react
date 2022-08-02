@@ -19,7 +19,7 @@ class Base64ImageField(ImageField):
                 decoded_file = b64decode(data)
             except TypeError:
                 self.fail(WRONG_IMAGE_TYPE)
-            file_name = str(uuid4())[:12]
+            file_name = str(uuid4())
             file_extension = self.get_file_extension(file_name, decoded_file)
             complete_file_name = "%s.%s" % (file_name, file_extension)
             data = ContentFile(decoded_file, name=complete_file_name)
