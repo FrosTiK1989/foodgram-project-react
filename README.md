@@ -2,15 +2,15 @@
 
 ## Стек технологий
 
-[![Python](https://img.shields.io/badge/-Python-464646?style=flat-square&logo=Python)](https://www.python.org/)
-[![Django](https://img.shields.io/badge/-Django-464646?style=flat-square&logo=Django)](https://www.djangoproject.com/)
-[![Django REST Framework](https://img.shields.io/badge/-Django%20REST%20Framework-464646?style=flat-square&logo=Django%20REST%20Framework)](https://www.django-rest-framework.org/)
-[![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-464646?style=flat-square&logo=PostgreSQL)](https://www.postgresql.org/)
-[![Nginx](https://img.shields.io/badge/-NGINX-464646?style=flat-square&logo=NGINX)](https://nginx.org/ru/)
-[![gunicorn](https://img.shields.io/badge/-gunicorn-464646?style=flat-square&logo=gunicorn)](https://gunicorn.org/)
-[![docker](https://img.shields.io/badge/-Docker-464646?style=flat-square&logo=docker)](https://www.docker.com/)
-[![GitHub%20Actions](https://img.shields.io/badge/-GitHub%20Actions-464646?style=flat-square&logo=GitHub%20actions)](https://github.com/features/actions)
-[![Yandex.Cloud](https://img.shields.io/badge/-Yandex.Cloud-464646?style=flat-square&logo=Yandex.Cloud)](https://cloud.yandex.ru/)
+- Python
+- Django
+- Django REST Framework
+- PostgreSQL
+- Nginx
+- Gunicorn
+- Docker
+- GitHubActions
+- Yandex.Cloud
 
 ## Описание проекта
 
@@ -19,14 +19,14 @@ Foodgram это ресурс для публикации рецептов.
 
 ## Установка проекта локально
 
-* Склонировать репозиторий на локальную машину:
+- Склонировать репозиторий на локальную машину:
 
 ```bash
 git clone https://github.com/FrosTiK1989/foodgram-project-react.git
 cd foodgram-project-react
 ```
 
-* Cоздать и активировать виртуальное окружение:
+- Cоздать и активировать виртуальное окружение:
 
 ```bash
 python -m venv env
@@ -36,7 +36,7 @@ python -m venv env
 source env/bin/activate
 ```
 
-* Cоздайте файл `.env` в директории `/infra/` с содержанием:
+- Cоздайте файл `.env` в директории `/infra/` с содержанием:
 
 ```
 SECRET_KEY=секретный ключ django
@@ -48,20 +48,20 @@ DB_HOST=db
 DB_PORT=5432
 ```
 
-* Перейти в директирию и установить зависимости из файла requirements.txt:
+- Перейти в директирию и установить зависимости из файла requirements.txt:
 
 ```bash
 cd backend/
 pip install -r requirements.txt
 ```
 
-* Выполните миграции:
+- Выполните миграции:
 
 ```bash
 python manage.py migrate
 ```
 
-* Запустите сервер:
+- Запустите сервер:
 
 ```bash
 python manage.py runserver
@@ -69,12 +69,11 @@ python manage.py runserver
 
 ## Запуск проекта в Docker контейнере
 
-* Установите Docker.
+- Установите Docker.
 
-Параметры запуска описаны в файлах `docker-compose.yml` и `nginx.conf` которые находятся в директории `infra/`.  
-При необходимости добавьте/измените адреса проекта в файле `nginx.conf`
+Параметры запуска описаны в файлах `docker-compose.yml` и `nginx.conf` которые находятся в директории `infra/`
 
-* Запустите docker compose:
+- Запустите docker compose:
 
 ```bash
 docker-compose up -d --build
@@ -86,31 +85,31 @@ docker-compose up -d --build
   > 2. контейнер приложения **backend**
   > 3. контейнер web-сервера **nginx**
   >
-* Примените миграции:
+- Примените миграции:
 
 ```bash
 docker-compose exec backend python manage.py migrate
 ```
 
-* Загрузите ингредиенты:
+- Загрузите ингредиенты:
 
 ```bash
 docker-compose exec backend python manage.py load_ingrs
 ```
 
-* Загрузите теги:
+- Загрузите теги:
 
 ```bash
 docker-compose exec backend python manage.py load_tags
 ```
 
-* Создайте администратора:
+- Создайте администратора:
 
 ```bash
 docker-compose exec backend python manage.py createsuperuser
 ```
 
-* Соберите статику:
+- Соберите статику:
 
 ```bash
 docker-compose exec backend python manage.py collectstatic --noinput
@@ -118,13 +117,9 @@ docker-compose exec backend python manage.py collectstatic --noinput
 
 ## Сайт
 
-Сайт доступен по ссылке:
-
-## Документация к API
-
-API документация доступна по ссылке (создана с помощью redoc):
+Сайт доступен по ссылке: <http://cookbook.hopto.org>
 
 ## Авторы
 
-[Маресов Д.А.](https://github.com/FrosTiK1989) - Python разработчик. Разработал бэкенд и деплой для сервиса Foodgram.  
-[Яндекс.Практикум](https://github.com/yandex-praktikum) Фронтенд для сервиса Foodgram.
+[Маресов Д.А.](https://github.com/FrosTiK1989) - Python разработчик (Backend)
+[Яндекс.Практикум](https://github.com/yandex-praktikum) Frontend
