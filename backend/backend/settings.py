@@ -12,15 +12,15 @@ SECRET_KEY = os.getenv('SECRET_KEY', default='1234')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['frostiktube.hopto.org', 'localhost', '62.84.121.72']
+ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
     'http://*localhost',
     'https://*localhost',
     'http://*62.84.121.72',
     'https://*62.84.121.72',
-    'https://*frostiktube.hopto.org',
-    'http://*frostiktube.hopto.org',
+    'https://*cookbook.hopto.org',
+    'http://*cookbook.hopto.org',
 ]
 
 
