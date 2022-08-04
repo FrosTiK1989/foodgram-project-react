@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
+from recipes.models import (Favorite, Ingredient, IngredientAmount, Recipe,
+                            ShoppingCart, Tag)
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
@@ -10,8 +12,6 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 
-from recipes.models import (Favorite, Ingredient, IngredientAmount, Recipe,
-                            ShoppingCart, Tag)
 from .filters import IngredientSearchFilter, RecipeFilter
 from .pagination import CustomPageNumberPagination
 from .permissions import IsAuthorOrReadOnly
@@ -28,6 +28,7 @@ class TagsViewSet(ReadOnlyModelViewSet):
     queryset = Tag.objects.all()
     permission_classes = (AllowAny,)
     serializer_class = TagSerializer
+    pagination_class = None
 
 
 class IngredientsViewSet(ReadOnlyModelViewSet):
@@ -38,6 +39,7 @@ class IngredientsViewSet(ReadOnlyModelViewSet):
     queryset = Ingredient.objects.all()
     permission_classes = (AllowAny, )
     serializer_class = IngredientSerializer
+    pagination_class = None
     filter_backends = [IngredientSearchFilter]
     search_fields = ('^name',)
 
