@@ -37,9 +37,14 @@ services:
       - frontend
 
   frontend:
-    image: frostik1989/foodgram_frontend:latest
+    container_name: frontend
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
     volumes:
       - ../frontend/:/app/result_build/
+    depends_on:
+      - backend
 
 volumes:
   postgres_data:
