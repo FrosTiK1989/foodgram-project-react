@@ -12,34 +12,38 @@
 - GitHubActions
 - Yandex.Cloud
 
-## Описание проекта
+## Описание
 
-Foodgram это ресурс для публикации рецептов.  
-Пользователи могут создавать свои рецепты, читать рецепты других пользователей, подписываться на интересных авторов, добавлять лучшие рецепты в избранное, а также создавать список покупок и загружать его в pdf формате
+«Продуктовый помощник»: это ресурс, на котором пользователи публикуют рецепты, добавляют чужие рецепты в избранное и подписываются на публикации других авторов. Сервис «Список покупок» позволит пользователям создавать список продуктов, которые нужно купить для приготовления выбранных блюд, а так же список покупок можно выгрузить в удобном PDF файле, который можно взять собой в магазин
 
-## Установка проекта локально
+## Установка локально
 
-- Склонировать репозиторий на локальную машину:
+- Склонировать репозиторий к себе на компьютер:
 
 ```bash
-git clone https://github.com/FrosTiK1989/foodgram-project-react.git
+git@github.com:FrosTiK1989/foodgram-project-react.git
 cd foodgram-project-react
 ```
 
 - Cоздать и активировать виртуальное окружение:
 
 ```bash
-python -m venv env
+python -m venv venv
 ```
 
 ```bash
-source env/bin/activate
+. venv/bin/activate
 ```
 
 - Cоздайте файл `.env` в директории `/infra/` с содержанием:
 
+```bash
+cd infra/
+touch .env
 ```
-SECRET_KEY=секретный ключ django
+
+```
+SECRET_KEY=<тут ваш секртеный ключ от Django>
 DB_ENGINE=django.db.backends.postgresql
 DB_NAME=postgres
 POSTGRES_USER=postgres
@@ -48,7 +52,7 @@ DB_HOST=db
 DB_PORT=5432
 ```
 
-- Перейти в директирию и установить зависимости из файла requirements.txt:
+- Установите зависимости из файла requirements.txt:
 
 ```bash
 cd backend/
@@ -85,34 +89,34 @@ docker-compose up -d --build
   > 2. контейнер приложения **backend**
   > 3. контейнер web-сервера **nginx**
   >
-- Примените миграции:
+- Выполните миграции:
 
 ```bash
 docker-compose exec backend python manage.py migrate
 ```
 
-- Загрузите ингредиенты:
+- Запустите процесс загрузки ингредиентов:
 
 ```bash
 docker-compose exec backend python manage.py load_ingrs
 ```
 
-- Загрузите теги:
+- Запустите процесс загрузки тегов:
 
 ```bash
 docker-compose exec backend python manage.py load_tags
 ```
 
-- Создайте администратора:
+- Создайте суперпользователя:
 
 ```bash
 docker-compose exec backend python manage.py createsuperuser
 ```
 
-- Соберите статику:
+- Заупстите процесс сбора статики:
 
 ```bash
-docker-compose exec backend python manage.py collectstatic --noinput
+docker-compose exec backend python manage.py collectstatic --no-input
 ```
 
 ## Сайт
@@ -121,5 +125,11 @@ docker-compose exec backend python manage.py collectstatic --noinput
 
 ## Авторы
 
-[Маресов Д.А.](https://github.com/FrosTiK1989) - Python разработчик (Backend)
-[Яндекс.Практикум](https://github.com/yandex-praktikum) Frontend
+Маресов Д.А. - Python разработчик (Backend)
+
+ > Email: frostik1989@yandex.ru
+ > Telegram: @frostik1989
+
+[Яндекс.Практикум](https://github.com/yandex-praktikum) Помогали и предоставили Frontend к сайту
+
+ > Site: practicum.yandex.ru
