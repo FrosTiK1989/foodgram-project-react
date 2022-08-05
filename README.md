@@ -128,6 +128,7 @@ docker-compose exec backend python manage.py collectstatic --no-input
 Маресов Д.А. - Python разработчик (Backend)
 
  > Email: frostik1989@yandex.ru
+ 
  > Telegram: @frostik1989
 
 [Яндекс.Практикум](https://github.com/yandex-praktikum) Помогали и предоставили Frontend к сайту
