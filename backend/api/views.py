@@ -128,8 +128,8 @@ class RecipeViewSet(ModelViewSet):
         page.setFont('Handicraft', size=16)
         height = 750
         for i, (name, data) in enumerate(final_list.items(), 1):
-            page.drawString(75, height, (f'{data["recipe"]}:')
-                                        (f'{i}. {name} - {data["amount"]} '
+            page.drawString(75, height, (f'{data["recipe"]}:'
+                                         f'{i}. {name} - {data["amount"]} '
                                          f'{data["measurement_unit"]}'))
             height -= 25
         page.showPage()
